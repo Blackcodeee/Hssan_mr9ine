@@ -125,7 +125,6 @@
 
     <!-- LOGIN PAGE -->
     <div class="login-container" id="loginPage">
-        <h1>MRS 9INE</h1>
         <h1>🔒 SECURE SYSTEM ACCESS</h1>
         <p>ENTER PASSWORD TO CONTINUE</p>
         
