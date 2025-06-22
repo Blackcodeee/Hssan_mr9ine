@@ -1,9 +1,9 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔐 Hacker Access Only</title>
+    <title>🔐 Mr hassan</title>
     <style>
         /* DARK HACKER THEME */
         body {
@@ -137,9 +137,9 @@
 
     <!-- SECRET PAGE (ONLY IF PASSWORD IS CORRECT) -->
     <div class="secret-page hidden" id="secretPage">
-        <h1>WELCOME🤝</h1>
-        <p> For more infomatiom STAY CONNECT</p>
-        <p> <span id="secretData">Loading...</span></p>
+        <h1>🚀 WELCOME, MR HASSAN!</h1>
+        <p>Najua weye si Hassan lkn kakuita jina iloo😅</p>
+        <p>9ine_co <span id="secretData">Loading...</span></p>
     </div>
 
     <script>
@@ -179,12 +179,15 @@
         
         setInterval(drawMatrix, 33);
 
-        // PASSWORD CHECKER
+        // PASSWORD CHECKER + VOICE ANNOUNCEMENTS
         function checkPassword() {
             const password = document.getElementById('passwordInput').value;
             const errorMsg = document.getElementById('errorMsg');
             const loginPage = document.getElementById('loginPage');
             const secretPage = document.getElementById('secretPage');
+            
+            // Initialize speech synthesis
+            const synth = window.speechSynthesis;
             
             if (password === "Hassan") {
                 // CORRECT PASSWORD
@@ -192,15 +195,25 @@
                 loginPage.classList.add('hidden');
                 secretPage.classList.remove('hidden');
                 
+                // Speak "Welcome, Mr Hassan"
+                const welcomeMsg = new SpeechSynthesisUtterance();
+                welcomeMsg.text = "Welcome, Mister Hassan";
+                synth.speak(welcomeMsg);
+                
                 // Simulate loading secret data
                 setTimeout(() => {
-                    document.getElementById('secretData').textContent = "Mr 9ine Database Accessed! ";
+                    document.getElementById('secretData').textContent = " for more informations STAY CONECTED";
                 }, 1500);
             } else {
                 // WRONG PASSWORD
                 errorMsg.textContent = "ACCESS DENIED! TRY AGAIN.";
                 errorMsg.classList.remove('hidden');
                 errorMsg.classList.add('error');
+                
+                // Speak "Access Denied"
+                const deniedMsg = new SpeechSynthesisUtterance();
+                deniedMsg.text = "Access Denied";
+                synth.speak(deniedMsg);
                 
                 // Reset animation
                 setTimeout(() => {
